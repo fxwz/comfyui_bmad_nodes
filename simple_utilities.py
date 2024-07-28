@@ -850,6 +850,7 @@ class MakeListMeta(type):
         def INPUT_TYPES(cls):
             return {"required": {
                 "inputs_len": ("INT", {"default": 2, "min": 0, "max": 32}),
+                #"item_key": ("STRING", {"default": ""}),
             }}
 
         if 'to_list' not in attrs:
@@ -884,6 +885,7 @@ class ToCondList(metaclass=MakeListMeta): TYPE = "CONDITIONING"
 class ToModelList(metaclass=MakeListMeta): TYPE = "MODEL"
 class ToColorList(metaclass=MakeListMeta): TYPE = "COLOR"
 class ToStringList(metaclass=MakeListMeta): TYPE = "STRING"
+class ToAnyList(metaclass=MakeListMeta): TYPE = "*"
 class ToIntList(metaclass=MakeListMeta): TYPE = "INT"
 class ToFloatList(metaclass=MakeListMeta): TYPE = "FLOAT"
 
@@ -962,6 +964,9 @@ NODE_CLASS_MAPPINGS = {
     "ToModelList": ToModelList,
     "ToColorList": ToColorList,
     "ToStringList": ToStringList,
+    "ToAnyList": ToAnyList,
+    "M'Any": ToAnyList,
+    #"ToMAny": ToAnyList,
     "ToIntList": ToIntList,
     "ToFloatList": ToFloatList,
     "ExtendMaskList": ExtendMaskList,
