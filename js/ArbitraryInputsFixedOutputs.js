@@ -13,6 +13,9 @@ const mi_node_types = {
     "ToModelList": "MODEL",
     "ToColorList": "COLOR",
     "ToStringList": "STRING",
+    "ToAnyList" : "*",
+    "M'Any" : "*",
+    "ToMAny" : "*",
     "ToIntList": "INT",
     "ToFloatList": "FLOAT",
 
